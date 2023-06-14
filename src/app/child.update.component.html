@@ -1,0 +1,31 @@
+<div class="container mt-3">
+<table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Gender</th>
+            <th>Address</th>
+            <th>Action</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{studentt.id}}</td>
+            <td><input type="text" [(ngModel)]="studentt.name" class="form-control width220-height30" 
+                id="name" placeholder="Enter Name" name="name"></td>
+            <td><input type="email" [(ngModel)]="studentt.email" class="form-control width220-height30" 
+                id="email" placeholder="Enter email" name="email"></td>
+            <td>{{studentt.gender}}</td>
+            <td><input type="address" [(ngModel)]="studentt.address" class="form-control width220-height30" id="address"
+                placeholder="Enter password" name="address"></td>
+            <td><button *ngIf="studentt.name" type="button" id="update" class="btn btn-primary" 
+                (click)="updateStudent()">Update</button></td>
+            
+          </tr>
+          
+        </tbody>
+      </table> 
+    </div>

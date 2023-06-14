@@ -1,0 +1,35 @@
+<div class="container mt-3">
+    <h2>All Students List</h2>
+                
+     <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Gender</th>
+          <th>Address</th>
+          <th>Action</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let student of students">
+          <td (click)="loadChild(student)" style="color:#BA4A00;font-weight: bold;">{{student.id}}</td>
+          <td>{{student.name}}</td>
+          <td>{{student.email}}</td>
+          <td>{{student.gender}}</td>
+          <td>{{student.address}}</td>
+          <td><button type="button" id="update" class="btn btn-primary" (click)="editStudent(student.id)">Update</button></td>
+          <td><button type="button" id="delete" class="btn btn-danger" (click)="deleteStudent(student.id)">Delete</button></td>
+        </tr>
+        
+      </tbody>
+    </table> 
+    <button type="button" id="create" class="btn btn-primary"
+     (click)="createStudent()">Create Student</button>
+     <h2>Can Update Here In Child</h2>
+    
+        </div>
+
+        <child-update [studentt]="selectedStudent" (studentChange)=updateStudent($event);></child-update>

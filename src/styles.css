@@ -1,0 +1,7 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+
+.width220-height30{
+    max-width: 220px;
+    max-height: 30px;
+}

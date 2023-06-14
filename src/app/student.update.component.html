@@ -1,0 +1,42 @@
+<div class="container mt-3">
+    <h2 *ngIf="!create">Update Student</h2>
+    <h2 *ngIf="create">Create Student</h2>
+<div>
+    <form>
+            <div class="mb-3 mt-3">
+                    <label for="id" class="form-label width220-height30">ID:</label>
+                    <input type="text" [(ngModel)]="student.id" 
+                    class="form-control width220-height30" id="id" readonly 
+                    name="id">
+            </div>
+        <div class="mb-3 mt-3">
+          <label for="name" class="form-label width220-height30">Name:</label>
+          <input type="text" [(ngModel)]="student.name" class="form-control width220-height30" 
+          id="name" placeholder="Enter Name" name="name">
+        </div>
+       
+        <div class="mb-3 mt-3">
+          <label for="email" class="form-label width220-height30">Email:</label>
+          <input type="email" [(ngModel)]="student.email" class="form-control width220-height30" 
+          id="email" placeholder="Enter email" name="email">
+        </div>
+        <div class="mb-3 mt-3">
+                <label for="gender" class="form-label width220-height30">Gender:</label>
+                &nbsp;&nbsp;&nbsp;<input type="radio" class="form-check-input" [(ngModel)]="student.gender" value="M" id="male" name="optradio">&nbsp;Male
+                &nbsp;&nbsp;&nbsp;<input type="radio" class="form-check-input" [(ngModel)]="student.gender" id="female" name="optradio" value="F">&nbsp;Female
+              </div>
+        <div class="mb-3 mt-3">
+          <label for="address" class="form-label width220-height30">Address:</label>
+          <input type="address" [(ngModel)]="student.address" class="form-control width220-height30" id="address"
+           placeholder="Enter password" name="address">
+        </div>
+
+        <div class="mb-3 mt-3">
+                <button type="button" *ngIf="!create" id="update" class="btn btn-primary" (click)="updateStudent()">Update</button>
+                <button type="button"  *ngIf="create" id="create" class="btn btn-primary" (click)="createStudent()">Create</button>
+              </div>
+        
+    </form>
+
+</div>
+</div>
